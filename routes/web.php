@@ -17,22 +17,151 @@ Route::get('/', function () {
     return view('Harvel.index');
 });
 
-route::get('admin/product',function (){
-    return view('Harvel.Product.admin');
+Route::group(['prefix' => 'adminrepos'], function () {
+    Route::get('', [
+        'uses' => 'AdminControllerWithRepos@index',
+        'as' => 'admin.index'
+    ]);
+
+    Route::get('show/{Ad_Id}',[
+        'uses' => 'AdminControllerWithRepos@show',
+        'as' => 'admin.show'
+    ]);
+
+    Route::get('update/{Ad_Id}',[
+        'uses' => 'AdminControllerWithRepos@edit',
+        'as' => 'admin.edit'
+    ]);
+
+    Route::post('update/{Ad_Id}',[
+        'uses' => 'AdminControllerWithRepos@update',
+        'as' => 'admin.update'
+    ]);
+
+    Route::get('delete/{Ad_Id}', [
+        'uses' => 'AdminControllerWithRepos@confirm',
+        'as' => 'admin.confirm'
+    ]);
+
+    Route::post('delete/{Ad_Id}',[
+        'uses' => 'AdminControllerWithRepos@destroy',
+        'as' => 'admin.destroy'
+    ]);
 });
 
-Route::get('admin/product/create', function (){
-    return view('Harvel.Product.new');
+Route::group(['prefix' => 'customerrepos'], function () {
+    Route::get('', [
+        'uses' => 'CustomerControllerWithRepos@index',
+        'as' => 'customer.index'
+    ]);
+
+    Route::get('show/{Cus_Id}',[
+        'uses' => 'CustomerControllerWithRepos@show',
+        'as' => 'customer.show'
+    ]);
+
+    Route::get('update/{Cus_Id}',[
+        'uses' => 'CustomerControllerWithRepos@edit',
+        'as' => 'customer.edit'
+    ]);
+
+    Route::post('update/{Cus_Id}',[
+        'uses' => 'CustomerControllerWithRepos@update',
+        'as' => 'customer.update'
+    ]);
+
+    Route::get('delete/{Cus_Id}', [
+        'uses' => 'CustomerControllerWithRepos@confirm',
+        'as' => 'customer.confirm'
+    ]);
+
+    Route::post('delete/{Cus_Id}',[
+        'uses' => 'CustomerControllerWithRepos@destroy',
+        'as' => 'customer.destroy'
+    ]);
 });
 
-route::get('admin/category',function (){
-    return view('Harvel.Category.adminCate');
+Route::group(['prefix' => 'productrepos'], function () {
+    Route::get('', [
+        'uses' => 'ProductControllerWithRepos@index',
+        'as' => 'product.index'
+    ]);
+
+    Route::get('show/{Prod_Id}',[
+        'uses' => 'ProductControllerWithRepos@show',
+        'as' => 'product.show'
+    ]);
+
+    Route::get('create',[
+        'uses' => 'ProductControllerWithRepos@create',
+        'as' => 'product.create'
+    ]);
+
+    Route::post('create',[
+        'uses' => 'ProductControllerWithRepos@store',
+        'as' => 'product.store'
+    ]);
+
+    Route::get('update/{Prod_Id}',[
+        'uses' => 'ProductControllerWithRepos@edit',
+        'as' => 'product.edit'
+    ]);
+
+    Route::post('update/{Prod_Id}',[
+        'uses' => 'ProductControllerWithRepos@update',
+        'as' => 'product.update'
+    ]);
+
+    Route::get('delete/{Prod_Id}', [
+        'uses' => 'ProductControllerWithRepos@confirm',
+        'as' => 'product.confirm'
+    ]);
+
+    Route::post('delete/{Prod_Id}',[
+        'uses' => 'ProductControllerWithRepos@destroy',
+        'as' => 'product.destroy'
+    ]);
 });
 
-route::get('admin/category/create',function (){
-    return view('Harvel.Category.newCate');
+Route::group(['prefix' => 'categoryrepos'], function () {
+    Route::get('', [
+        'uses' => 'CategoryControllerWithRepos@index',
+        'as' => 'category.index'
+    ]);
+
+    Route::get('show/{Cate_Id}',[
+        'uses' => 'CategoryControllerWithRepos@show',
+        'as' => 'category.show'
+    ]);
+
+    Route::get('create',[
+        'uses' => 'CategoryControllerWithRepos@create',
+        'as' => 'category.create'
+    ]);
+
+    Route::post('create',[
+        'uses' => 'CategoryControllerWithRepos@store',
+        'as' => 'category.store'
+    ]);
+
+    Route::get('update/{Cate_Id}',[
+        'uses' => 'CategoryControllerWithRepos@edit',
+        'as' => 'category.edit'
+    ]);
+
+    Route::post('update/{Cate_Id}',[
+        'uses' => 'CategoryControllerWithRepos@update',
+        'as' => 'category.update'
+    ]);
+
+    Route::get('delete/{Cate_Id}', [
+        'uses' => 'CategoryControllerWithRepos@confirm',
+        'as' => 'category.confirm'
+    ]);
+
+    Route::post('delete/{Cate_Id}',[
+        'uses' => 'CategoryControllerWithRepos@destroy',
+        'as' => 'category.destroy'
+    ]);
 });
 
-route::get('admin/customer',function (){
-    return view('Harvel.Customer.adminCus');
-});
