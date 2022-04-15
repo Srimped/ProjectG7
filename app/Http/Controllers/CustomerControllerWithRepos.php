@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 use App\Repository\CustomerRepos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class CustomerControllerWithRepos extends Controller
 {
     public function index()
     {
         $customer = CustomerRepos::getAllCus();
+        if($key = request()->key)
+                {
+                    $key = DB::table('customer')->where('Cus_Name','like','%'.$key.'%')->get();
+                    $customer= $key;
+                }
         return view('Harvel.Customer.index',
             [
                 'customer' => $customer,

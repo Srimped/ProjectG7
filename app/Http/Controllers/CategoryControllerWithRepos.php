@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 use App\Repository\CategoryRepos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class CategoryControllerWithRepos extends Controller
 {
     public function index()
     {
         $category = CategoryRepos::getAllCate();
+        if($key = request()->key)
+            {
+                $key = DB::table('category')->where('Cate_Name','like','%'.$key.'%')->get();
+                $category= $key;
+            }
         return view('Harvel.Category.index',
             [
                 'category' => $category,

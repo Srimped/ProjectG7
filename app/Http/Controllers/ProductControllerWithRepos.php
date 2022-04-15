@@ -6,12 +6,18 @@ use App\Repository\ProductRepos;
 use App\Repository\CategoryRepos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class ProductControllerWithRepos extends Controller
 {
     public function index()
     {
         $product = ProductRepos::getAllProduct();
+        if($key = request()->key)
+        {
+            $key = DB::table('product')->where('Prod_Name','like','%'.$key.'%')->get();
+            $product= $key;
+        }
         return view('Harvel.Product.index',
             [
                 'product' => $product,
