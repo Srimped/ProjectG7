@@ -14,6 +14,11 @@ class CategoryControllerWithRepos extends Controller
         $category = CategoryRepos::getAllCate();
         if($key = request()->key)
             {
+
+                //The LIKE command is used in a WHERE clause to search for a specified pattern in a column.
+                //You can use two wildcards with LIKE:
+                //% - Represents zero, one, or multiple characters
+                //_ - Represents a single character (MS Access uses a question mark (?) instead)
                 $key = DB::table('category')->where('Cate_Name','like','%'.$key.'%')->get();
                 $category= $key;
             }
