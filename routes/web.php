@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('Harvel.index');
 });
 
+Route::group(['prefix' => 'about'], function () {
+    Route::get('',function (){
+        return view('Harvel.about');
+    })->name('Harvel.about');
+    });
+
 Route::group(['prefix' => 'adminrepos'], function () {
     Route::get('', [
         'uses' => 'AdminControllerWithRepos@index',

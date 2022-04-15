@@ -91,8 +91,8 @@
 </style>
 <footer>
     <div class="footer-content">
-        <h3>Thank you for visiting our webiste</h3>
-        <p>this is a great honnor for us to serve you</p>
+        <h3>Thank you for visiting our website</h3>
+        <p>this is a great honor for us to serve you</p>
         <ul class="socials">
             <li><a class="contact-btn"><i class="fab fa-instagram"></i></a></li>
             <li><a class="contact-btn"><i class="fab fa-facebook-square"></i></a></li>

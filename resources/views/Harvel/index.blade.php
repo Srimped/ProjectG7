@@ -2,36 +2,35 @@
 
 @section('main')
     @include('Harvel.nav_bar')
-    <div id="demo" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" class="active"></li>
-            <li data-target="#demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
-
-        <!-- The slideshow -->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="/image/carousel_1.jpg" alt="Los Angeles" width="945" height="852">
+    <section>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{{asset('image/carousel.png')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{asset('image/carousel_1.png')}}" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{asset('image/carousel_2.png')}}" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{asset('image/carousel_3.png')}}" alt="fourth slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{asset('image/carousel_4.png')}}" alt="fifth slide">
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="/image/carousel_2.jpg" alt="Chicago" width="945" height="852">
-            </div>
-            <div class="carousel-item">
-                <img src="/image/carousel_3.jpg" alt="New York" width="945" height="852">
-            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </a>
-    </div>
-    </div>
+    </section>
     <section class="bestseller">
         <br>
         <br>
@@ -77,7 +76,10 @@
 
                 </div>
             </div>
-            @include('Harvel.footer')
         </div>
+    </section>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <section>
+        @include('Harvel.footer')
     </section>
 @endsection()
