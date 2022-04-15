@@ -5,12 +5,22 @@ namespace App\Http\Controllers;
 use App\Repository\CustomerRepos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class CustomerControllerWithRepos extends Controller
 {
     public function index()
     {
         $customer = CustomerRepos::getAllCus();
+        if($key = request()->key)
+                {
+                //The LIKE command is used in a WHERE clause to search for a specified pattern in a column.
+                //You can use two wildcards with LIKE:
+                //% - Represents zero, one, or multiple characters
+                //_ - Represents a single character (MS Access uses a question mark (?) instead)
+                    $key = DB::table('customer')->where('Cus_Name','like','%'.$key.'%')->get();
+                    $customer= $key;
+                }
         return view('Harvel.Customer.index',
             [
                 'customer' => $customer,

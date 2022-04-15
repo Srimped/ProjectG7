@@ -5,12 +5,24 @@ namespace App\Http\Controllers;
 use App\Repository\AdminRepos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class AdminControllerWithRepos extends Controller
 {
     public function index()
     {
+
+
         $admin = AdminRepos::getAllAdmin();
+        if($key = request()->key)
+            {
+                //The LIKE command is used in a WHERE clause to search for a specified pattern in a column.
+                //You can use two wildcards with LIKE:
+                //% - Represents zero, one, or multiple characters
+                //_ - Represents a single character (MS Access uses a question mark (?) instead)
+                $key = DB::table('admin')->where('Ad_Name','like','%'.$key.'%')->get();
+                $admin= $key;
+            }
         return view('Harvel.Admin.index',
             [
                 'admin' => $admin,
@@ -19,7 +31,6 @@ class AdminControllerWithRepos extends Controller
 
     public function show($Ad_Id)
     {
-
         $admin = AdminRepos::getAdminById($Ad_Id);
         return view('Harvel.Admin.show',
             [

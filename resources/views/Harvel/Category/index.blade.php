@@ -3,8 +3,14 @@
 @section('main')
     @include('Harvel.admin_nav_bar')
     <div class="container">
-        <input type="text" id="search_bar" class="search_bar" placeholder="Search Category...."><i
-            class="fa-solid fa-magnifying-glass"></i><br>
+        <form action="" class="form-inline" >
+            <div class="form-group">
+                <input class="form-control" name="key" placeholder="Search by name">
+            </div>
+            <button type="submit" class="btn btn-primary" value="search">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
         <a type="button" class="btn btn-danger btn-sm"
            href="{{route('category.create')}}">Create</a>
         <h1 class="display-4">Category Index</h1>

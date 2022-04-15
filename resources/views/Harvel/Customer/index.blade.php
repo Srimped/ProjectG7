@@ -3,8 +3,14 @@
 @section('main')
     @include('Harvel.admin_nav_bar')
     <div class="container">
-        <input type="text" id="search_bar" class="search_bar" placeholder="Search Customer...."><i
-            class="fa-solid fa-magnifying-glass"></i>
+        <form action="" class="form-inline" >
+            <div class="form-group">
+                <input class="form-control" name="key" placeholder="Search by name">
+            </div>
+            <button type="submit" class="btn btn-primary" value="search">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
         <h1 class="display-4">Customer Index</h1>
         @include('Harvel.Customer.sessionmessage')
         <table class="table table-hover">

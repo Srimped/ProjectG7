@@ -5,12 +5,23 @@ namespace App\Http\Controllers;
 use App\Repository\CategoryRepos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class CategoryControllerWithRepos extends Controller
 {
     public function index()
     {
         $category = CategoryRepos::getAllCate();
+        if($key = request()->key)
+            {
+
+                //The LIKE command is used in a WHERE clause to search for a specified pattern in a column.
+                //You can use two wildcards with LIKE:
+                //% - Represents zero, one, or multiple characters
+                //_ - Represents a single character (MS Access uses a question mark (?) instead)
+                $key = DB::table('category')->where('Cate_Name','like','%'.$key.'%')->get();
+                $category= $key;
+            }
         return view('Harvel.Category.index',
             [
                 'category' => $category,
