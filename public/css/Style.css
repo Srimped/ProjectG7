@@ -1,3 +1,8 @@
+td, p, h1, h2, h3, h4, dt, dd{
+    color: white;
+}
+
+
 .nav-link{
     flex: 1;
     text-align: right;
@@ -12,6 +17,7 @@ nav{
 }
 
 .nav-link ul li{
+    color: white;
     list-style: none;
     display: inline-block;
     padding: 8px 20px;
@@ -19,7 +25,7 @@ nav{
 }
 
 .nav-link ul li a{
-    color: black;
+    color: white;
     text-decoration: none;
     font-size: 25px;
     letter-spacing: 0px;
@@ -29,7 +35,7 @@ nav{
     content: '';
     width: 0%;
     height: 2px;
-    background: blue;
+    background: white;
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -114,14 +120,16 @@ nav{
 }
 
 .action-btn{
+    text-align: center;
+    align-items: center;
     font-size: 50px;
     display: inline-block;
     text-decoration: none;
     color: black;
-    border: 2px solid grey;
+    border: 2px solid orangered;
     padding: 17px 24px;
     font-size: 13px;
-    background: lightblue;
+    background: orange;
     position: relative;
     cursor: pointer;
 }
@@ -202,10 +210,51 @@ th{
     padding: 20px;
 }
 
+.search_bar{
+    border-radius: 40px;
+    padding: 10px 20px;
+}
+
 .search_bar[type=text] {
     transition: width 0.4s ease-in-out;
 }
 
 .search_bar[type=text]:focus {
     width: 73%;
+}
+
+.shop-col{
+    border-radius: 10px;
+    margin: auto;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    padding-bottom: 100px;
+    transition: 0.5s;
+}
+
+.shop-col img{
+    width: 50%
+}
+
+.shop{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.shop-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+.shop-row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 80px;
+    float: left;
+}
+
+main{
+    background-image: url("allproduct_bg.png");
 }

@@ -1,16 +1,17 @@
 @extends('Master.Master')
 
 @section('main')
-    @include('Harvel.admin_nav_bar')
+    @include('Harvel.admin_nav_bar')<br>
     <div class="container">
         <form action="" class="form-inline" >
             <div class="form-group">
-                <input class="form-control" name="key" placeholder="Search by name">
+                <input class="search_bar" name="key" placeholder="Search by name">
             </div>
             <button type="submit" class="btn btn-primary" value="search">
                 <i class="fas fa-search"></i>
             </button>
         </form>
+        <br><br>
         <h1 class="display-4">Customer Index</h1>
         @include('Harvel.Customer.sessionmessage')
         <table class="table table-hover">

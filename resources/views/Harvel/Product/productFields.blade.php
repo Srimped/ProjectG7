@@ -19,8 +19,8 @@
         @endforeach
     </select>
     <div class="create-group">
-        <label for="Prodimg" class="font-weight-bold">Image</label>
-        <input type="file" class="form-control" id="Prodimg" name="Prodimg" value="">
+        <label for="Prod_Image" class="font-weight-bold">Image</label>
+        <input type="file" class="form-control" id="Prod_Image" name="Prod_Image" value="{{old('Prod_Image')?? $product->Prod_Image}}">
     </div>
     <div class="form-group">
         <label for="price" class="font-weight-bold">Price(VND)</label>

@@ -23,6 +23,22 @@ Route::group(['prefix' => 'about'], function () {
     })->name('Harvel.about');
     });
 
+Route::group(['prefix' => 'allproduct'], function () {
+    Route::get('', [
+        'uses' => 'AllProductController@index',
+        'as' => 'allproduct.index'
+    ]);
+
+    Route::get('show/{Prod_Id}',[
+        'uses' => 'AllProductController@show',
+        'as' => 'allproduct.show'
+    ]);
+    Route::get('allproduct/{Prod_Name}',[
+        'uses' => 'AllProductController@search',
+        'as' => 'allproduct.search'
+    ]);
+});
+
 Route::group(['prefix' => 'adminrepos'], function () {
     Route::get('', [
         'uses' => 'AdminControllerWithRepos@index',

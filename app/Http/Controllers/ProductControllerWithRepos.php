@@ -52,6 +52,7 @@ class ProductControllerWithRepos extends Controller
                 'Prod_Name' => '',
                 'price' => '',
                 'description'=>'',
+                'Prod_Image'=>'',
             ],
              "category" => $category
             ]);
@@ -66,6 +67,7 @@ class ProductControllerWithRepos extends Controller
             'Cate_Id'=>$request->input('category'),
             'price' => $request->input('price'),
             'description' => $request->input('description'),
+            'Prod_Image' => $request->input('Prod_Image'),
         ];
 
         $newId = ProductRepos::insert($product);
@@ -102,6 +104,7 @@ class ProductControllerWithRepos extends Controller
             'Cate_Id' => $request->input('category'),
             'price' => $request->input('price'),
             'description' => $request->input('description'),
+            'Prod_Image' => $request->input('Prod_Image'),
         ];
         ProductRepos::update($product);
 
