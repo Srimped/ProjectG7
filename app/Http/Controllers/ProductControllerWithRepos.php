@@ -113,13 +113,14 @@ class ProductControllerWithRepos extends Controller
     }
 
     public function confirm($Prod_Id){
-        $product = ProductRepos::getProductById($Prod_Id); //this is always an array
-
-        return view('Harvel.Product.confirm',
-            [
-                'product' => $product[0]
-            ]
-        );
+    $product = ProductRepos::getProductById($Prod_Id);
+            $category = CategoryRepos::getCateByProd_Id($Prod_Id);
+            return view('Harvel.Product.confirm',
+                [
+                    'product' => $product[0],
+                    'category' => $category[0],
+                ]
+            );
     }
 
     public function destroy(Request $request, $Prod_Id)

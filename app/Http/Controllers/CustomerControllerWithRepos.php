@@ -83,13 +83,12 @@ class CustomerControllerWithRepos extends Controller
     }
 
     public function confirm($Cus_Id){
-        $customer = CustomerRepos::getCusById($Cus_Id); //this is always an array
-
-        return view('Harvel.Customer.confirm',
-            [
-                'customer' => $customer[0]
-            ]
-        );
+        $customer = CustomerRepos::getCusById($Cus_Id);
+                return view('Harvel.Customer.confirm',
+                    [
+                        'customer' => $customer[0]
+                    ]
+                );
     }
 
     public function destroy(Request $request, $Cus_Id)

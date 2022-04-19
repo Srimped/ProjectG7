@@ -13,6 +13,4 @@
 
     <dt class="col-sm-3">Location</dt>
     <dd class="col-sm-9">{{ $customer->location }}</dd>
-
-
 </dl>
