@@ -114,7 +114,7 @@ class CustomerControllerWithRepos extends Controller
                 'location' => ['required',],
                 'Cus_Name' => ['required'],
                 'Cus_Email' => ['required', 'email'],
-                'Cus_Phonenumber' => ['required', 'starts_with:0', 'numeric', 'size:10'],
+                'Cus_Phonenumber' => ['required', 'starts_with:0', 'digits:10'],
             ]
         );
     }

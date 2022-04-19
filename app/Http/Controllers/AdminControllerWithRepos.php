@@ -119,7 +119,7 @@ class AdminControllerWithRepos extends Controller
                 'password' => ['required','alpha_num','min:7'],
                 'Ad_Name' => ['required'],
                 'Ad_Email' => ['required', 'email'],
-                'Ad_Phonenumber' => ['required', 'starts_with:0', 'numeric', 'size:10'],
+                'Ad_Phonenumber' => ['required', 'starts_with:0', 'digits:10'],
             ]
         );
     }
