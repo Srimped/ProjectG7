@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('Harvel.index');
 });
 
+//Route::get('', [
+//    'uses' => 'CategoryControllerWithRepos@navindex',
+//    'as' => 'nav.index'
+//]);
+
 Route::group(['prefix' => 'about'], function () {
     Route::get('',function (){
         return view('Harvel.about');
@@ -33,9 +38,9 @@ Route::group(['prefix' => 'allproduct'], function () {
         'uses' => 'AllProductController@show',
         'as' => 'allproduct.show'
     ]);
-    Route::get('allproduct/{Prod_Name}',[
-        'uses' => 'AllProductController@search',
-        'as' => 'allproduct.search'
+    Route::get('category/{Cate_Id}',[
+        'uses' => "AllProductController@navindex",
+        'as' => 'allproduct.category'
     ]);
 });
 

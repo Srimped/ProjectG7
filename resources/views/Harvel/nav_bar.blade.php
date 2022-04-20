@@ -1,5 +1,6 @@
 @extends('Master.Master')
 <nav>
+    <a href="http://127.0.0.1:8000/"><img src="/image/logo.png" style="width: 80%"></a>
     <div class="nav-link" id="navlink">
         <ul>
             <li><a href="http://127.0.0.1:8000/">HOME</a></li>
@@ -16,6 +17,9 @@
 <nav>
     <div class="nav-link" id="navlink" style="font-size: 20px; text-align: center">
         <ul>
+{{--            @foreach($categories as $c)--}}
+{{--                <li><a>{{$c->Cate_Name}}</a></li>--}}
+{{--            @endforeach--}}
             <li><a>Smart Phone</a></li>
             <li><a>Laptop</a></li>
             <li><a>Pc</a></li>

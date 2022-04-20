@@ -22,6 +22,14 @@ class ProductRepos
         return DB::select($sqlp, [$Prod_Id]);
     }
 
+    public static function sortProductById($Cate_Id){
+        $sqlp = 'select p.* ';
+        $sqlp .= 'from product as p ';
+        $sqlp .= 'where p.Cate_Id = ? ';
+
+        return BD::select($sqlp, [$Cate_Id]);
+    }
+
     public static function insert($product){
         $sqlp = 'insert into product ';
         $sqlp .= '(Prod_Name, Cate_Id, price, description, Prod_Image) ';
