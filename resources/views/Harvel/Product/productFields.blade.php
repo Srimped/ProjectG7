@@ -1,3 +1,4 @@
+
 <input type="hidden" name="Prod_Id" value="{{old('Prod_Id')?? $product->Prod_Id}}">
 <div class="form-group">
     <label for="Prod_Name" class="font-weight-bold">Name</label>
