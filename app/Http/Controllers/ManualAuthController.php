@@ -20,27 +20,24 @@ class ManualAuthController extends Controller
         $password = ($request->input('password'));
 
         $account = AdminRepos::getAllAdmin();
+
         $this->formValidate($request)->validate();
 
         for($i = 0; $i < count($account); $i++)
-            if($username == $account[$i]->username && $password == $account[$i]->password)
-                break;
-
-        if($i < count($account))
-        {
-            Session::put('username', $request->input('username'));
-            return redirect()->route('admin.index');
-        }
+            if($username == $account[$i]->username && $password == $account[$i]->password) break;
+                if($i < count($account))
+                    {
+                        Session::put('username', $request->input('username'));
+                        return redirect()->route('admin.index');
+                    }
         else return redirect()->route('auth.ask');
+
         return redirect()->route('admin.index');
     }
 
     public function signout()
     {
-        if(Session::has('username')
-        ){
-            Session::forget('username');
-        }
+        if(Session::has('username')){Session::forget('username');}
         return redirect()->action('ManualAuthController@ask');
     }
 
@@ -49,7 +46,7 @@ class ManualAuthController extends Controller
         return Validator::make(
             $request->all(),
             [
-                'username'=>['required'],
+                'username'=>['required','min:3'],
                 'password'=>['required','min:7',
                     function ($attribute, $value, $fail) use ($request)
                     {
@@ -61,15 +58,11 @@ class ManualAuthController extends Controller
                             if($username == $account[$i]->username)
                             {
                                 $value = ($request->input('password'));
-                                if($value != $account[$i]->password)
-                                {
-                                    $n++;break;
-                                }
+                                if($value != $account[$i]->password) {$n++;break;}
                             }
                         }
                         if($n!=0) $fail('Password is incorrect');
                     }],
-            ]
-        );
+            ]);
     }
 }

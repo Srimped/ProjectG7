@@ -34,6 +34,7 @@
         font-weight: 400;
         text-transform: capitalize;
         line-height: 3rem;
+        text-align: center;
     }
 
     .footer-content p {
@@ -41,6 +42,7 @@
         margin: 10px auto;
         line-height: 28px;
         font-size: 14px;
+        text-align: center;
     }
 
     .socials {

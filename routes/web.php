@@ -17,11 +17,6 @@ Route::get('/', function () {
     return view('Harvel.index');
     });
 
-//Route::get('', [
-//    'uses' => 'CategoryControllerWithRepos@navindex',
-//    'as' => 'nav.index'
-//]);
-
 Route::group(['prefix' => 'about'], function () {
     Route::get('',function (){
         return view('Harvel.about');

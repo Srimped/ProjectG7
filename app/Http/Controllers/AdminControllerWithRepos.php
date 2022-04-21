@@ -12,45 +12,13 @@ class AdminControllerWithRepos extends Controller
     public function index()
     {
         $admin = AdminRepos::getAllAdmin();
-        if($key = request()->key)
-            {
-                //The LIKE command is used in a WHERE clause to search for a specified pattern in a column.
-                //You can use two wildcards with LIKE:
-                //% - Represents zero, one, or multiple characters
-                //_ - Represents a single character (MS Access uses a question mark (?) instead)
-                $key = DB::table('admin')->where('Ad_Name','like','%'.$key.'%')->get();
-                $admin= $key;
-            }
-        return view('Harvel.Admin.index',
-            [
-                'admin' => $admin,
-            ]);
+        return view('Harvel.Admin.index',['admin' => $admin,]);
     }
 
     public function show($Ad_Id)
     {
         $admin = AdminRepos::getAdminById($Ad_Id);
-        return view('Harvel.Admin.show',
-            [
-                'admin' => $admin[0]
-            ]
-        );
-    }
-
-    public function create()
-    {
-
-        return view(
-            'Harvel.Admin.new',
-            ["admin" => (object)[
-                'Ad_Id' => '',
-                'username' => '',
-                'password' => '',
-                'Ad_Name' => '',
-                'Ad_Email' => '',
-                'Ad_Phonenumber' => '',
-            ]]);
-
+        return view('Harvel.Admin.show',['admin' => $admin[0]]);
     }
 
     public function edit($Ad_Id)
@@ -64,11 +32,10 @@ class AdminControllerWithRepos extends Controller
     public function update(Request $request, $Ad_Id)
     {
         if ($Ad_Id != $request->input('Ad_Id')) {
-            //id in query string must match id in hidden input
             return redirect()->action('AdminControllerWithRepos@index');
         }
 
-        $this->formValidate($request)->validate(); //shortcut
+        $this->formValidate($request)->validate();
 
         $admin = (object)[
             'Ad_Id' => $request-> Ad_Id,
@@ -109,36 +76,33 @@ class AdminControllerWithRepos extends Controller
 
     private function formValidate($request)
     {
-
         return Validator::make(
             $request->all(),
             [
                 'username' => ['required','min:3'],
                 'password' => ['required','min:7',
                 function ($attribute, $value, $fail) use ($request)
+                    {
+                        $username = $request->input('username');
+                        $account = AdminRepos::getAllAdmin();
+                        $n=0;
+                        for($i=0;$i<count($account);$i++)
+                            {
+                                if($username == $account[$i]->username)
                                     {
-                                        $username = $request->input('username');
-                                        $account = AdminRepos::getAllAdmin();
-                                        $n=0;
-                                        for($i=0;$i<count($account);$i++)
-                                        {
-                                            if($username == $account[$i]->username)
+                                        $value = ($request->input('password'));
+                                        if($value != $account[$i]->password)
                                             {
-                                                $value = ($request->input('password'));
-                                                if($value != $account[$i]->password)
-                                                {
-                                                    $n++;break;
-                                                }
+                                                $n++;break;
                                             }
-                                        }
-                                        if($n!=0) $fail('Password is incorrect');
-                                    }],
+                                    }
+                            }
+                                if($n!=0) $fail('Password is incorrect');
+                    }],
                 'Ad_Name' => ['required'],
                 'Ad_Email' => ['required', 'email'],
                 'Ad_Phonenumber' => ['required', 'starts_with:0', 'digits:10'],
             ]
         );
     }
-
-
 }

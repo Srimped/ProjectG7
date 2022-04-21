@@ -1,12 +1,11 @@
 <nav>
     <div class="nav-link" id="navlink">
         <ul>
-            <li><a href="{{route('admin.index')}}">Admin</a></li>
             <li><a href="{{route('product.index')}}">Product</a></li>
             <li><a href="{{route('category.index')}}">Category</a></li>
             <li><a href="{{route('customer.index')}}">Customer</a></li>
             <li class="nav-item mr-3">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('admin.index')}}">
                     <i class="bi bi-person"></i>
                     {{\Illuminate\Support\Facades\Session::has('username')?\Illuminate\Support\Facades\Session::get('username'):''}}
                 </a>

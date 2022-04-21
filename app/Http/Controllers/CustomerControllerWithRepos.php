@@ -38,21 +38,6 @@ class CustomerControllerWithRepos extends Controller
         );
     }
 
-    public function create()
-    {
-
-        return view(
-            'Harvel.Customer.new',
-            ["customer" => (object)[
-                'Cus_Id' => '',
-                'Cus_Name' => '',
-                'Cus_Email' => '',
-                'Cus_Phonenumber' => '',
-                'location' => '',
-            ]]);
-
-    }
-
     public function edit($Cus_Id)
     {
         $customer = CustomerRepos::getCusById($Cus_Id);
