@@ -47,8 +47,6 @@
                 <div class="layer">
                     <h3>Iphone 13</h3>
                     <p>the newest smart phone in apple</p>
-                    <button class="action-btn" type="submit" name="Add"><i class="fas fa-shopping-cart"></i> Add to Cart
-                    </button>
                     <button class="action-btn" type="submit" name="Detail">Show Detail</button>
 
                 </div>
@@ -60,8 +58,6 @@
                     <div class="layer">
                         <h3>Iphone 13</h3>
                         <p>the newest smart phone in apple</p>
-                        <button class="action-btn" type="submit" name="Add"><i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
                         <button class="action-btn" type="submit" name="Detail">Show Detail</button>
                     </div>
                 </div>
@@ -72,8 +68,6 @@
                     <div class="layer">
                         <h3>Iphone 13</h3>
                         <p>the newest smart phone in apple</p>
-                        <button class="action-btn" type="submit" name="Add"><i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
                         <button class="action-btn" type="submit" name="Detail">Show Detail</button>
                     </div>
                 </div>

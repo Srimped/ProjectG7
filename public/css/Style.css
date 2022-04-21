@@ -224,9 +224,10 @@ th{
 }
 
 .shop-col{
+    padding-bottom: 100px;
+    padding-top: 100px;
     border-radius: 50px;
     margin: auto;
-    padding: 20px 12px;
     box-sizing: border-box;
     transition: 0.5s;
 }

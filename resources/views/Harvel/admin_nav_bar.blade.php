@@ -1,4 +1,4 @@
-<nav>
+    <nav>
     <div class="nav-link" id="navlink">
         <ul>
             <li><a href="{{route('product.index')}}">Product</a></li>

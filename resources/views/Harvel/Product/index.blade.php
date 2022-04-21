@@ -20,12 +20,11 @@
         }
 
         .img li img{
-            width: 1000%;
-            height: 900%;
+            width: 1500%;
             visibility: hidden;
             background: rgba(44, 181, 137, 0.3);
             margin-left: 100px;
-            transform: translateX(-180%) translateY(-70%);
+            transform: translateX(-170%) translateY(-70%);
         }
 
         .img li:hover img{
@@ -53,7 +52,7 @@
         <table class="table table-hover">
             <thead class="thead-dark">
             <tr>
-                <th scope="col">Image</th>
+                <th scope="col"> </th>
                 <th scope="col">Product Name</th>
                 <th scope="col">Price (VND)</th>
                 <th scope="col">&nbsp;</th>

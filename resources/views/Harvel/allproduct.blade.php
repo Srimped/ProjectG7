@@ -39,17 +39,17 @@
     <h1>---All Products---</h1>
     <section class="shop">
     @foreach($product as $p)
+        <a style="cursor: pointer" type="submit" href="{{route('allproduct.show', ['Prod_Id' => $p->Prod_Id])}}">
     <div class="shop-row">
         <div class="shop-col">
             <img src="/image/{{$p->Prod_Image}}" width="10%" alt="">
             <div class="layer">
-                <h5>{{$p->Prod_Name}}</h5>
-                <p>{{$p->price}} VNĐ</p>
-                <button class="action-btn" type="submit" name="Add"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                <a class="action-btn" type="submit" href="{{route('allproduct.show', ['Prod_Id' => $p->Prod_Id])}}">Show Detail</a>
+                <h4>{{$p->Prod_Name}}</h4>
+                <h5>{{$p->price}} VNĐ</h5>
             </div>
         </div>
     </div>
+        </a>
     @endforeach
     </section>
 @endsection
