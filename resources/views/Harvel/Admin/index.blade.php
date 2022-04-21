@@ -10,7 +10,6 @@
             <thead class="thead-dark">
             <tr>
                 <th scope="col">Username</th>
-                <th scope="col">Password</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Phone number</th>
@@ -23,7 +22,6 @@
             @foreach($admin as $a)
                 <tr>
                     <td>{{$a->username}}</td>
-                    <td>{{$a->password}}</td>
                     <td>{{$a->Ad_Name}}</td>
                     <td>{{$a->Ad_Email}}</td>
                     <td>{{$a->Ad_Phonenumber}}</td>

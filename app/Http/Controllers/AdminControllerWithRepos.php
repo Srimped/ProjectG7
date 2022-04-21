@@ -52,7 +52,7 @@ class AdminControllerWithRepos extends Controller
     }
 
     public function confirm($Ad_Id){
-        $admin = AdminRepos::getAdminById($Ad_Id); //this is always an array
+        $admin = AdminRepos::getAdminById($Ad_Id);
 
         return view('Harvel.Admin.confirm',
             [
