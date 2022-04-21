@@ -247,6 +247,7 @@ th{
 }
 
 .shop-row{
+    margin-right: 10px;
     margin-top: 5%;
     display: flex;
     justify-content: space-between;

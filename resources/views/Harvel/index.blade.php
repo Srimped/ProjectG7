@@ -36,35 +36,13 @@
             </a>
         </div>
     </section>
-    <section class="bestseller">
+    <section class="shop">
         <br>
         <br>
         <h1 class="best_title">---- Best Seller ----</h1>
         <p class="best_des">- Best Items In This Month -</p>
-        <div class="row">
-            <div class="item_box">
-                <img src="/image/product_1.jpg">
-                <div class="layer">
-                    <h3>Iphone 13</h3>
-                    <p>the newest smart phone in apple</p>
-                    <button class="action-btn" type="submit" name="Add"><i class="fas fa-shopping-cart"></i> Add to Cart
-                    </button>
-                    <button class="action-btn" type="submit" name="Detail">Show Detail</button>
-
-                </div>
-            </div>
-            <div class="item_box">
-                <img src="/image/product_1.jpg">
-                <div class="layer">
-                    <h3>Iphone 13</h3>
-                    <p>the newest smart phone in apple</p>
-                    <button class="action-btn" type="submit" name="Add"><i class="fas fa-shopping-cart"></i> Add to Cart
-                    </button>
-                    <button class="action-btn" type="submit" name="Detail">Show Detail</button>
-
-                </div>
-            </div>
-            <div class="item_box">
+        <div class="shop-row">
+            <div class="shop-col">
                 <img src="/image/product_1.jpg">
                 <div class="layer">
                     <h3>Iphone 13</h3>
@@ -76,6 +54,30 @@
                 </div>
             </div>
         </div>
+            <div class="shop-row">
+                <div class="shop-col">
+                    <img src="/image/product_1.jpg">
+                    <div class="layer">
+                        <h3>Iphone 13</h3>
+                        <p>the newest smart phone in apple</p>
+                        <button class="action-btn" type="submit" name="Add"><i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        <button class="action-btn" type="submit" name="Detail">Show Detail</button>
+                    </div>
+                </div>
+            </div>
+            <div class="shop-row">
+                <div class="shop-col">
+                    <img src="/image/product_1.jpg">
+                    <div class="layer">
+                        <h3>Iphone 13</h3>
+                        <p>the newest smart phone in apple</p>
+                        <button class="action-btn" type="submit" name="Add"><i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        <button class="action-btn" type="submit" name="Detail">Show Detail</button>
+                    </div>
+                </div>
+            </div>
     </section>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <section>

@@ -1,98 +1,60 @@
 @extends('Master.Master')
 @section('main')
-<head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body {font-family: Arial, Helvetica, sans-serif;}
-        form {border: 3px solid #f1f1f1;}
-        label{color: white}
-        input[type=text], input[type=password] {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
+        h1{
+            margin-bottom: 40px;
         }
 
-        a {
-            background-color: #04AA6D;
+        form{
+            transform: translateX(30%);
+            width: 500px;
+            border: 2px solid #ccc;
+            padding: 30px;
+            background: transparent;
+            border-radius: 15px;
+            margin-left: 600px;
+        }
+
+        input{
+            display: block;
+            border: 2px solid #ccc;
+            width: 95%;
+            padding: 10px;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+
+        label{
             color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        a:hover {
-            opacity: 0.8;
-        }
-
-        button {
-            background-color: #04AA6D;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        button:hover {
-            opacity: 0.8;
-        }
-
-        .cancelbtn {
-            width: auto;
-            padding: 10px 18px;
-            background-color: #f44336;
-        }
-
-        .container {
-            padding: 16px;
-        }
-
-        span.password {
-            float: right;
-            padding-top: 16px;
-        }
-
-        /* Change styles for span and cancel button on extra small screens */
-        @media screen and (max-width: 300px) {
-            span.password {
-                display: block;
-                float: none;
-            }
-            .cancelbtn {
-                width: 100%;
-            }
+            font-size: 18px;
+            padding: 10px;
         }
     </style>
-</head>
-<body>
-
-<h2>Login Form</h2>
-
-<form action="{{route('auth.signin')}}" method="post">
-    @csrf
-    <div class="container">
-        <label for="username"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="username">
-
-        <label for="password"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password">
-
-        <button type="submit">Login</button>
-        <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
+    <br>
+    <section class="loginheader">
+    <div class="text-box">
+        <form action="{{route('auth.signin')}}" method="post">
+            @csrf
+            <h1>Login Form</h1>
+            <label for="username"><b>Username</b></label>
+            <br>
+            <input type="text" placeholder="Enter Username" name="username">
+            <br><br>
+            <label for="password"><b>Password</b></label>
+            <br>
+            <input type="password" placeholder="Enter Password" name="password">
+            <br><br>
+            <button class="btn btn-success" type="submit">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+            <br>
+            <div>
+                <a type="button" class="btn btn-danger" href="http://127.0.0.1:8000" >Cancel</a>
+                <span class="password"><a href="#">Forgot password?</a></span>
+            </div>
+        </form>
     </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-        <a type="button" class="cancelbtn" href="http://127.0.0.1:8000" >Cancel</a>
-        <span class="password"><a href="#">Forgot password?</a></span>
-    </div>
-</form>
-</body>
+</section>
 @endsection
