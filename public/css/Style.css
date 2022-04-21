@@ -1,5 +1,5 @@
 td, p, h1, h2, h3, h4, h5, dt, dd{
-    color: white;
+    color: black;
 }
 
 
@@ -10,6 +10,7 @@ td, p, h1, h2, h3, h4, h5, dt, dd{
 }
 
 nav{
+    background: #dbaf96;
     display: flex;
     padding: 0% 6%;
     justify-content: space-between;
@@ -256,11 +257,11 @@ th{
 }
 
 body{
-    background-image: url("allproduct_bg.png");
+    background: white;
 }
 
 main{
-    background-image: url("allproduct_bg.png");
+    background: white;
 }
 
 .dimage{

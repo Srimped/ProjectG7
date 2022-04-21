@@ -1,76 +1,52 @@
 @extends('Master.Master')
 @section('main')
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        form {border: 3px solid #f1f1f1;}
-        label{color: white}
-        input[type=text], input[type=password] {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
+        .loginheader{
+            transform: translateX(5%);
+        }
+        h1{
+            margin-bottom: 40px;
         }
 
-        a {
-            background-color: #04AA6D;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
+        form{
+            width: 500px;
+            border: 2px solid #ccc;
+            padding: 30px;
+            background: transparent;
+            border-radius: 15px;
+            margin-left: 600px;
         }
 
-        a:hover {
-            opacity: 0.8;
+        input{
+            display: block;
+            border: 2px solid #ccc;
+            width: 95%;
+            padding: 10px;
+            margin: 10px auto;
+            border-radius: 5px;
         }
 
-        button {
-            background-color: #04AA6D;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
+        label{
+            color: black;
+            font-size: 18px;
+            padding: 10px;
         }
 
-        button:hover {
-            opacity: 0.8;
+        .container{
+            background: rgba(13, 205, 207, 0.15);
         }
 
-        .cancelbtn {
-            width: auto;
-            padding: 10px 18px;
-            background-color: #f44336;
-        }
-
-        .container {
-            padding: 16px;
-        }
-
-        span.password {
-            float: right;
-            padding-top: 16px;
-        }
-
-        /* Change styles for span and cancel button on extra small screens */
-        @media screen and (max-width: 300px) {
-            span.password {
-                display: block;
-                float: none;
-            }
-            .cancelbtn {
-                width: 100%;
-            }
+        .validation{
+            transform: translateX(-50%);
         }
     </style>
-
-    <h2>Login Form</h2>
-    @include('Harvel.partials.errors')
+    <br><br>
+    <section class="loginheader">
+        <div class="text-box">
     <form action="{{route('auth.signin')}}" method="post">
+        @include('Harvel.partials.errors')
+        <br><br><br><br><br>
+        <h2>Login Form</h2>
         @csrf
         <div class="container">
             <label for="username"><b>Username</b></label>
@@ -79,15 +55,15 @@
             <label for="password"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="password">
 
-            <button type="submit">Login</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
+            <button type="submit" class="btn btn-success">Login</button>
+            <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
         </div>
 
-        <div class="container" style="background-color:#f1f1f1">
-            <a type="button" class="cancelbtn" href="http://127.0.0.1:8000" >Cancel</a>
+        <div class="container">
+            <a type="button" class="btn btn-danger" href="http://127.0.0.1:8000" >Cancel</a>
             <span class="password"><a href="#">Forgot password?</a></span>
         </div>
     </form>
+        </div>
+    </section>
 @endsection

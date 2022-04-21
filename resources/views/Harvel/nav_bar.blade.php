@@ -1,6 +1,6 @@
 @extends('Master.Master')
 <nav>
-    <a href="http://127.0.0.1:8000/"><img src="/image/logo.png" style="width: 80%"></a>
+    <a href="http://127.0.0.1:8000/"><img src="/image/logo.png" style="width: 60%"></a>
     <div class="nav-link" id="navlink">
         <ul>
             <li><a href="http://127.0.0.1:8000/">HOME</a></li>
@@ -11,4 +11,3 @@
         </ul>
     </div>
 </nav>
-<br>

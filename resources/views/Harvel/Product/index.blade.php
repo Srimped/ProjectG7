@@ -12,6 +12,7 @@
             border-radius: 50%;
             transition: 0.5s;
             cursor: pointer;
+            border: solid black 2px;
         }
 
         .img li:hover {
@@ -36,11 +37,9 @@
 
         <form action="" class="form-inline" >
             <div class="form-group">
-                <input class="search_bar" name="key" placeholder="Search by name">
+                <input class="search_bar" name="key" placeholder="Search by name" style="transform: translateX(380%) translateY(100%);">
             </div>
-            <button type="submit" class="btn btn-primary" value="search">
-                <i class="fas fa-search"></i>
-            </button>
+            <button type="submit" class="btn btn-primary" value="search" style="transform: translateX(1380%) translateY(128%)"><i class="fas fa-search"></i></button>
         </form>
 
         <br>
