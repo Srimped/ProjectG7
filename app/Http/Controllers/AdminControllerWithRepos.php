@@ -11,8 +11,6 @@ class AdminControllerWithRepos extends Controller
 {
     public function index()
     {
-
-
         $admin = AdminRepos::getAllAdmin();
         if($key = request()->key)
             {
@@ -116,7 +114,25 @@ class AdminControllerWithRepos extends Controller
             $request->all(),
             [
                 'username' => ['required','min:3'],
-                'password' => ['required','alpha_num','min:7'],
+                'password' => ['required','min:7',
+                function ($attribute, $value, $fail) use ($request)
+                                    {
+                                        $username = $request->input('username');
+                                        $account = AdminRepos::getAllAdmin();
+                                        $n=0;
+                                        for($i=0;$i<count($account);$i++)
+                                        {
+                                            if($username == $account[$i]->username)
+                                            {
+                                                $value = ($request->input('password'));
+                                                if($value != $account[$i]->password)
+                                                {
+                                                    $n++;break;
+                                                }
+                                            }
+                                        }
+                                        if($n!=0) $fail('Password is incorrect');
+                                    }],
                 'Ad_Name' => ['required'],
                 'Ad_Email' => ['required', 'email'],
                 'Ad_Phonenumber' => ['required', 'starts_with:0', 'digits:10'],

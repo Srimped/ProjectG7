@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('Harvel.index');
-});
+    });
 
 Route::group(['prefix' => 'about'], function () {
     Route::get('',function (){
@@ -39,7 +39,7 @@ Route::group(['prefix' => 'allproduct'], function () {
     ]);
 });
 
-Route::group(['prefix' => 'adminrepos'], function () {
+Route::group(['prefix' => 'adminrepos','middleware' => ['manual.auth']], function () {
     Route::get('', [
         'uses' => 'AdminControllerWithRepos@index',
         'as' => 'admin.index'
@@ -71,7 +71,7 @@ Route::group(['prefix' => 'adminrepos'], function () {
     ]);
 });
 
-Route::group(['prefix' => 'customerrepos'], function () {
+Route::group(['prefix' => 'customerrepos','middleware' => ['manual.auth']], function () {
     Route::get('', [
         'uses' => 'CustomerControllerWithRepos@index',
         'as' => 'customer.index'
@@ -103,7 +103,7 @@ Route::group(['prefix' => 'customerrepos'], function () {
     ]);
 });
 
-Route::group(['prefix' => 'productrepos'], function () {
+Route::group(['prefix' => 'productrepos','middleware' => ['manual.auth']], function () {
     Route::get('', [
         'uses' => 'ProductControllerWithRepos@index',
         'as' => 'product.index'
@@ -145,7 +145,7 @@ Route::group(['prefix' => 'productrepos'], function () {
     ]);
 });
 
-Route::group(['prefix' => 'categoryrepos'], function () {
+Route::group(['prefix' => 'categoryrepos','middleware' => ['manual.auth']], function () {
     Route::get('', [
         'uses' => 'CategoryControllerWithRepos@index',
         'as' => 'category.index'
@@ -187,3 +187,17 @@ Route::group(['prefix' => 'categoryrepos'], function () {
     ]);
 });
 
+Route::group(['prefix' => 'auth'], function(){
+    Route::get('login',[
+        'uses' => 'ManualAuthController@ask',
+        'as'=> 'auth.ask'
+    ]);
+    Route::post('login',[
+        'uses' => 'ManualAuthController@signin',
+        'as'=> 'auth.signin'
+    ]);
+    Route::get('logout',[
+        'uses' => 'ManualAuthController@signout',
+        'as'=> 'auth.signout'
+    ]);
+});
