@@ -17,7 +17,7 @@ class ManualAuthController extends Controller
     {
 
         $username = $request->input('username');
-        $password = ($request->input('password'));
+        $password = sha1($request->input('password'));
 
         $account = AdminRepos::getAllAdmin();
 
@@ -30,7 +30,7 @@ class ManualAuthController extends Controller
                         Session::put('username', $request->input('username'));
                         return redirect()->route('admin.index');
                     }
-        else return redirect()->route('auth.ask');
+            else return redirect()->route('auth.ask');
 
         return redirect()->route('admin.index');
     }
@@ -57,7 +57,7 @@ class ManualAuthController extends Controller
                         {
                             if($username == $account[$i]->username)
                             {
-                                $value = ($request->input('password'));
+                                $value = sha1($request->input('password'));
                                 if($value != $account[$i]->password) {$n++;break;}
                             }
                         }
