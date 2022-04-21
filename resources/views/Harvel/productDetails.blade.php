@@ -1,20 +1,19 @@
-<dl class="row">
-    <dt class="col-sm-3">ID</dt>
-    <dd class="col-sm-9">{{ $product->Prod_Id }}</dd>
-
-    <dt class="col-sm-3">Name</dt>
-    <dd class="col-sm-9">{{ $product->Prod_Name }}</dd>
-
-    <dt class="col-sm-3">Image</dt>
-    <dd class="col-sm-9"><img src="/image/{{ $product->Prod_Image }}" style="width: 50%"></dd>
-
-    <dt class="col-sm-3">Category</dt>
-    <dd class="col-sm-9">{{ $category->Cate_Name }}</dd>
-
-    <dt class="col-sm-3">Price(VND)</dt>
-    <dd class="col-sm-9">{{ $product->price }}</dd>
-
-    <dt class="col-sm-3">Description</dt>
-    <dd class="col-sm-9">{{ $product->description }}</dd>
-
-</dl>
+<div class="row">
+    <div class="col-sm-4">
+        <img class="dimage" src="/image/{{ $product->Prod_Image }}" style="width: 100%">
+    </div>
+    <br>
+    <div class="col-sm-6">
+        <h5 class="col-sm-3">Name</h5>
+        <div class="col-sm-9">{{ $product->Prod_Name }}</div>
+        <br>
+        <h5 class="col-sm-3">Category</h5>
+        <div class="col-sm-9">{{ $category->Cate_Name }}</div>
+        <br>
+        <h5 class="col-sm-3">Price(VND)</h5>
+        <div class="col-sm-9">{{ $product->price }} VNĐ</div>
+        <br>
+        <h5 class="col-sm-3">Description</h5>
+        <div class="col-sm-9">{{ $product->description }}</div>
+    </div>
+</div>

@@ -2,8 +2,13 @@
 
 @section('main')
     @include('Harvel.nav_bar')
-    <section>
+    <section style="width: 80%; margin: auto">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="d-block w-100" src="{{asset('image/carousel.png')}}" alt="First slide">
@@ -44,9 +49,7 @@
                     <p>the newest smart phone in apple</p>
                     <button class="action-btn" type="submit" name="Add"><i class="fas fa-shopping-cart"></i> Add to Cart
                     </button>
-                    <button class="action-btn" type="submit" name="Detail"><i class="fas fa-shopping-cart"></i>Show
-                        Detail
-                    </button>
+                    <button class="action-btn" type="submit" name="Detail">Show Detail</button>
 
                 </div>
             </div>
@@ -57,9 +60,7 @@
                     <p>the newest smart phone in apple</p>
                     <button class="action-btn" type="submit" name="Add"><i class="fas fa-shopping-cart"></i> Add to Cart
                     </button>
-                    <button class="action-btn" type="submit" name="Detail"><i class="fas fa-shopping-cart"></i>Show
-                        Detail
-                    </button>
+                    <button class="action-btn" type="submit" name="Detail">Show Detail</button>
 
                 </div>
             </div>
@@ -70,9 +71,7 @@
                     <p>the newest smart phone in apple</p>
                     <button class="action-btn" type="submit" name="Add"><i class="fas fa-shopping-cart"></i> Add to Cart
                     </button>
-                    <button class="action-btn" type="submit" name="Detail"><i class="fas fa-shopping-cart"></i>Show
-                        Detail
-                    </button>
+                    <button class="action-btn" type="submit" name="Detail">Show Detail</button>
 
                 </div>
             </div>

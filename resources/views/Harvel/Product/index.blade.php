@@ -2,6 +2,37 @@
 
 @section('main')
     @include('Harvel.admin_nav_bar')<br>
+    <style>
+        .img li{
+            position: absolute;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .img li:hover {
+            background: #86ff3b;
+            box-shadow: 0 0 0 4px #333, 0 0 0 6px #86ff3b
+        }
+
+        .img li img{
+            width: 1000%;
+            height: 900%;
+            visibility: hidden;
+            background: rgba(44, 181, 137, 0.3);
+            margin-left: 100px;
+            transform: translateX(-180%) translateY(-70%);
+        }
+
+        .img li:hover img{
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
     <div class="container">
 
         <form action="" class="form-inline" >
@@ -33,7 +64,14 @@
             <tbody>
             @foreach($product as $p)
                 <tr>
-                    <td><img src="/image/{{$p->Prod_Image}}"></td>
+{{--                    <td><img src="/image/{{$p->Prod_Image}}"></td>--}}
+                    <td>
+                        <ul class="img">
+                            <li>
+                                <img  src="/image/{{$p->Prod_Image}}">
+                            </li>
+                        </ul>
+                    </td>
                     <td>{{$p->Prod_Name}}</td>
                     <td>{{$p->price}}</td>
                     <td><a type="button" class="btn btn-primary btn-sm"
