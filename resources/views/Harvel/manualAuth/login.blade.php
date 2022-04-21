@@ -73,7 +73,7 @@
 <body>
 
 <h2>Login Form</h2>
-
+@include('Harvel.partials.errors')
 <form action="{{route('auth.signin')}}" method="post">
     @csrf
     <div class="container">
