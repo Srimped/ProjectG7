@@ -22,12 +22,20 @@ class AdminRepos
         return DB::select($sqla, [$Ad_Id]);
     }
 
+    public static function getPassById($Ad_Id){
+            $sqla = 'select a.password ';
+            $sqla .= 'from admin as a ';
+            $sqla .= 'where a.Ad_Id = ? ';
+
+            return DB::select($sqla, [$Ad_Id]);
+        }
+
     public static function update($admin){
         $sqla = 'update admin ';
-        $sqla .= 'set username = ?, password = ?, Ad_Name = ?, Ad_Email = ?, Ad_Phonenumber = ? ';
+        $sqla .= 'set username = ?, Ad_Name = ?, Ad_Email = ?, Ad_Phonenumber = ? ';
         $sqla .= 'where Ad_Id = ? ';
 
-        DB::update($sqla, [$admin->username, $admin->password, $admin->Ad_Name, $admin-> Ad_Email,
+        DB::update($sqla, [$admin->username, $admin->Ad_Name, $admin-> Ad_Email,
          $admin -> Ad_Phonenumber ,$admin -> Ad_Id ]);
 
     }

@@ -35,16 +35,23 @@ class AdminControllerWithRepos extends Controller
             return redirect()->action('AdminControllerWithRepos@index');
         }
 
+        $password = sha1($request->input('password'));
+
+        $bool=$password===AdminRepos::getPassById($Ad_Id)[0]->password;
         $this->formValidate($request)->validate();
 
-        $admin = (object)[
-            'Ad_Id' => $request-> Ad_Id,
-            'username' => $request->input('username'),
-            'password' => $request->input('password'),
-            'Ad_Name' => $request->input('Ad_Name'),
-            'Ad_Email' => $request->input('Ad_Email'),
-            'Ad_Phonenumber' => $request->input('Ad_Phonenumber'),
-        ];
+        if($bool==true)
+            {
+                $admin = (object)[
+                    'Ad_Id' => $request-> Ad_Id,
+                    'username' => $request->input('username'),
+                    'Ad_Name' => $request->input('Ad_Name'),
+                    'Ad_Email' => $request->input('Ad_Email'),
+                    'Ad_Phonenumber' => $request->input('Ad_Phonenumber'),
+                    ];
+            }
+        else return redirect()->route('admin.edit');
+
         AdminRepos::update($admin);
 
         return redirect()->action('AdminControllerWithRepos@index')
@@ -80,25 +87,7 @@ class AdminControllerWithRepos extends Controller
             $request->all(),
             [
                 'username' => ['required','min:3'],
-                'password' => ['required','min:7',
-                function ($attribute, $value, $fail) use ($request)
-                    {
-                        $username = $request->input('username');
-                        $account = AdminRepos::getAllAdmin();
-                        $n=0;
-                        for($i=0;$i<count($account);$i++)
-                            {
-                                if($username == $account[$i]->username)
-                                    {
-                                        $value = ($request->input('password'));
-                                        if($value != $account[$i]->password)
-                                            {
-                                                $n++;break;
-                                            }
-                                    }
-                            }
-                                if($n!=0) $fail('Password is incorrect');
-                    }],
+                'password' => ['required','min:7'],
                 'Ad_Name' => ['required'],
                 'Ad_Email' => ['required', 'email'],
                 'Ad_Phonenumber' => ['required', 'starts_with:0', 'digits:10'],

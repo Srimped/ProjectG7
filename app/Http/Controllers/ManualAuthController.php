@@ -25,12 +25,12 @@ class ManualAuthController extends Controller
 
         for($i = 0; $i < count($account); $i++)
             if($username == $account[$i]->username && $password == $account[$i]->password) break;
-                if($i < count($account))
-                    {
-                        Session::put('username', $request->input('username'));
-                        return redirect()->route('admin.index');
-                    }
-            else return redirect()->route('auth.ask');
+        if($i < count($account))
+            {
+                Session::put('username', $request->input('username'));
+                return redirect()->route('admin.index');
+            }
+        else return redirect()->route('auth.ask');
 
         return redirect()->route('admin.index');
     }

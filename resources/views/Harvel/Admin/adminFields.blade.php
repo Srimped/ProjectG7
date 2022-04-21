@@ -13,7 +13,7 @@
 <div class="form-group">
     <label for="password" class="font-weight-bold">Password</label>
     <input type="text" class="form-control" id="password" name="password" min="0"
-           value="{{old('password')?? $admin->password}}">
+           value="">
 </div>
 
 <div class="form-group">
