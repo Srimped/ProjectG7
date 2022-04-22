@@ -65,29 +65,6 @@ class AdminControllerWithRepos extends Controller
             ->with('msg', 'Update Successfully');
     }
 
-    public function confirm($Ad_Id){
-        $admin = AdminRepos::getAdminById($Ad_Id);
-
-        return view('Harvel.Admin.confirm',
-            [
-                'admin' => $admin[0]
-            ]
-        );
-    }
-
-    public function destroy(Request $request, $Ad_Id)
-    {
-        if ($request->input('Ad_Id') != $Ad_Id) {
-            return redirect()->action('AdminSessionController@index');
-        }
-
-        AdminRepos::delete($Ad_Id);
-
-
-        return redirect()->action('AdminControllerWithRepos@index')
-            ->with('msg', 'Delete Successfully');
-    }
-
     private function formValidate($request)
     {
         return Validator::make(

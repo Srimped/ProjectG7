@@ -59,16 +59,6 @@ Route::group(['prefix' => 'adminrepos','middleware' => ['manual.auth']], functio
         'uses' => 'AdminControllerWithRepos@update',
         'as' => 'admin.update'
     ]);
-
-    Route::get('delete/{Ad_Id}', [
-        'uses' => 'AdminControllerWithRepos@confirm',
-        'as' => 'admin.confirm'
-    ]);
-
-    Route::post('delete/{Ad_Id}',[
-        'uses' => 'AdminControllerWithRepos@destroy',
-        'as' => 'admin.destroy'
-    ]);
 });
 
 Route::group(['prefix' => 'customerrepos','middleware' => ['manual.auth']], function () {

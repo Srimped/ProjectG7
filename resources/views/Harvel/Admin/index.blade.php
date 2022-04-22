@@ -32,10 +32,6 @@
                            href="{{route('admin.edit', ['Ad_Id' => $a->Ad_Id])}}"
                         >Edit</a>
                     </td>
-                    <td>
-                        <a type="button" class="btn btn-danger btn-sm"
-                           href="{{route('admin.confirm', ['Ad_Id' => $a->Ad_Id])}}"
-                        >Delete</a></td>
                 </tr>
             @endforeach
             </tbody>
