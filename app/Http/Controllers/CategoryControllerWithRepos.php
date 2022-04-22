@@ -111,8 +111,14 @@ class CategoryControllerWithRepos extends Controller
 
     public function destroy(Request $request, $Cate_Id)
     {
+
         if ($request->input('Cate_Id') != $Cate_Id) {
-            return redirect()->action('CategorySessionController@index');
+            return redirect()->action('CategoryControllerWithRepos@index');
+        }
+        if((DB::table('product')->where('Cate_Id','like','%'.$Cate_Id.'%')->first()===null)==false)
+        {
+            return redirect()->action('CategoryControllerWithRepos@index')
+            ->with('msg', 'You cannot delete this category while there are products in this category!!!!');
         }
 
        CategoryRepos::delete($Cate_Id);
