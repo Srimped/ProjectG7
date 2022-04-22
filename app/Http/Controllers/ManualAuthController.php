@@ -47,7 +47,7 @@ class ManualAuthController extends Controller
             $request->all(),
             [
                 'username'=>['required','min:3'],
-                'password'=>['required','min:7',
+                'password'=>['required','alpha_num','min:7',
                     function ($attribute, $value, $fail) use ($request)
                     {
                         $username = $request->input('username');

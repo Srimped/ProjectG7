@@ -50,7 +50,11 @@ class AdminControllerWithRepos extends Controller
                     'Ad_Phonenumber' => $request->input('Ad_Phonenumber'),
                     ];
             }
-        else return redirect()->route('admin.edit');
+        else
+        {
+            $admin = AdminRepos::getAdminById($Ad_Id);
+            return view('Harvel.Admin.update',["admin" => $admin[0]]);
+        }
 
         AdminRepos::update($admin);
 
@@ -87,7 +91,7 @@ class AdminControllerWithRepos extends Controller
             $request->all(),
             [
                 'username' => ['required','min:3'],
-                'password' => ['required','min:7'],
+                'password' => ['required','alpha_num','min:7'],
                 'Ad_Name' => ['required'],
                 'Ad_Email' => ['required', 'email'],
                 'Ad_Phonenumber' => ['required', 'starts_with:0', 'digits:10'],
