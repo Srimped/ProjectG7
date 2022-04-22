@@ -7,6 +7,7 @@
             text-align: center;
         }
     </style>
+    <br><br><br><br><br>
 <section class="bg-success py-5">
     <div class="container">
         <div>
@@ -73,7 +74,7 @@
     </div>
 </section>
     <section>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         @include('Harvel.footer')
     </section>
 @endsection

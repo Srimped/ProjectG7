@@ -2,7 +2,7 @@
 
 @section('main')
     @include('Harvel.nav_bar')
-    <section style="width: 80%; margin: auto">
+    <section style="width: 100%; margin: auto">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <ul class="carousel-indicators">
                 <li data-target="#demo" data-slide-to="0" class="active"></li>

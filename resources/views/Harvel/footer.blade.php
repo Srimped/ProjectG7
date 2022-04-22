@@ -30,6 +30,7 @@
     }
 
     .footer-content h3 {
+        color: white;
         font-size: 1.8rem;
         font-weight: 400;
         text-transform: capitalize;
@@ -38,6 +39,7 @@
     }
 
     .footer-content p {
+        color: white;
         max-width: 500px;
         margin: 10px auto;
         line-height: 28px;
