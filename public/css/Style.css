@@ -268,3 +268,37 @@ main{
     display: flex;
     margin-top: 100px;
 }
+
+.nav-cate{
+    flex: 1;
+    text-align: center;
+    letter-spacing: 30px;
+}
+
+.nav-cate ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 20px;
+    position: relative;
+}
+
+.nav-cate ul li a{
+    color: #000;
+    text-decoration: none;
+    font-size: 25px;
+    letter-spacing: 0px;
+}
+
+.nav-cate ul li a::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #000;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-cate ul li a:hover::after{
+    width: 100%
+}

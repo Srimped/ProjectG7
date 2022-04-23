@@ -14,6 +14,20 @@ class CustomerRepos
         return DB::select ($sqlcus);
     }
 
+    public static  function insert($customer){
+        $sqlcus = 'insert into customer ';
+        $sqlcus .= '(Cus_Name, location, Cus_Email, Cus_Phonenumber, Cus_Id) ';
+        $sqlcus .= 'values (?, ?, ?, ?, ?) ';
+
+        $result =  DB::insert($sqlcus, [$customer -> Cus_Name, $customer -> location,
+            $customer -> Cus_Email, $customer -> Cus_Phonenumber, $customer -> Cus_Id]);
+        if($result){
+            return DB::getPdo()->lastInsertId();
+        } else {
+            return -1;
+        }
+    }
+
     public static function getCusById($Cus_Id){
         $sqlcus = 'select cus.* ';
         $sqlcus .= 'from customer as cus ';

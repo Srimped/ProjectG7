@@ -13,7 +13,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('auth.signout')}}">
-                    <i class="bi bi-box-arrow-left"></i><a href="http://127.0.0.1:8000/">Logout</a>
+                    <i class="bi bi-box-arrow-left"></i><a href="{{route('auth.signin')}}">Logout</a>
                 </a>
             </li>
         </ul>

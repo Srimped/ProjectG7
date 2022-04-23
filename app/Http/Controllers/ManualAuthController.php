@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Repository\AdminRepos;
+use App\Repository\CustomerRepos;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;

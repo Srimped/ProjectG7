@@ -3,6 +3,7 @@
 @section('main')
     @include('Harvel.nav_bar')
     <section style="width: 100%; margin: auto;>
+        <div id=">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <ul class="carousel-indicators">
                 <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -36,6 +37,7 @@
             </a>
         </div>
     </section>
+    @include('Harvel.category')
     <section class="shop">
         <br>
         <br>

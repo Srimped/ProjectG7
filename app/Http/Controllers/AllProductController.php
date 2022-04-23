@@ -12,18 +12,20 @@ class AllProductController extends Controller
     public function index()
     {
         $product = ProductRepos::getAllProduct();
-//        if($key = request()->key)
-//        {
-//            //The LIKE command is used in a WHERE clause to search for a specified pattern in a column.
-//            //You can use two wildcards with LIKE:
-//            //% - Represents zero, one, or multiple characters
-//            //_ - Represents a single character (MS Access uses a question mark (?) instead)
-//            $key = DB::table('product')->where('Prod_Name','like','%'.$key.'%')->get();
-//            $product= $key;
-//        }
+        $category = CategoryRepos::getAllCate();
+        if($key = request()->key)
+        {
+            //The LIKE command is used in a WHERE clause to search for a specified pattern in a column.
+            //You can use two wildcards with LIKE:
+            //% - Represents zero, one, or multiple characters
+            //_ - Represents a single character (MS Access uses a question mark (?) instead)
+            $key = DB::table('product')->where('Prod_Name','like','%'.$key.'%')->get();
+            $product= $key;
+        }
         return view('Harvel.allproduct',
             [
                 'product' => $product,
+                'category' => $category,
             ]);
     }
 
@@ -38,5 +40,16 @@ class AllProductController extends Controller
                 'category' => $category[0],
             ]
         );
+    }
+
+    public function category($Cate_Id)
+    {
+        $product = ProductRepos::selectCate($Cate_Id);
+        $category = CategoryRepos::getAllCate();
+        return view('Harvel.allproduct',
+            [
+                'product' => $product,
+                'category'=>$category,
+            ]);
     }
 }

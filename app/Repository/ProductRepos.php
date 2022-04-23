@@ -22,12 +22,11 @@ class ProductRepos
         return DB::select($sqlp, [$Prod_Id]);
     }
 
-    public static function sortProductById($Cate_Id){
-        $sqlp = 'select p.* ';
-        $sqlp .= 'from product as p ';
-        $sqlp .= 'where p.Cate_Id = ? ';
-
-        return BD::select($sqlp, [$Cate_Id]);
+    public static function selectCate($Cate_Id){
+        $sql = 'select p.* ';
+        $sql .= 'from product as p ';
+        $sql .= 'where p.Cate_Id = ? ';
+        return DB::select($sql, [$Cate_Id]);
     }
 
     public static function insert($product){

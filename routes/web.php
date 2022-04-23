@@ -12,16 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+    Route::get('home',[
+        'uses' => 'MainController@home',
+        'as' => 'harvel.home'
+    ]);
 
-Route::get('/', function () {
-    return view('Harvel.index');
-    });
+    Route::get('about',[
+        'uses' => 'MainController@about',
+        'as' => 'harvel.about'
+    ]);
 
-Route::group(['prefix' => 'about'], function () {
-    Route::get('',function (){
-        return view('Harvel.about');
-    })->name('Harvel.about');
-    });
 
 Route::group(['prefix' => 'allproduct'], function () {
     Route::get('', [
@@ -34,7 +34,7 @@ Route::group(['prefix' => 'allproduct'], function () {
         'as' => 'allproduct.show'
     ]);
     Route::get('category/{Cate_Id}',[
-        'uses' => "AllProductController@navindex",
+        'uses' => "AllProductController@category",
         'as' => 'allproduct.category'
     ]);
 });
@@ -189,5 +189,16 @@ Route::group(['prefix' => 'auth'], function(){
     Route::get('logout',[
         'uses' => 'ManualAuthController@signout',
         'as'=> 'auth.signout'
+    ]);
+});
+
+Route::group(['prefix' => 'register'], function(){
+    Route::get('', [
+        'uses' => 'RegisterController@register',
+        'as' => 'auth.register'
+    ]);
+    Route::post('', [
+        'uses' => 'RegisterController@registered',
+        'as' => 'auth.registered'
     ]);
 });

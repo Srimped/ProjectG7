@@ -1,6 +1,7 @@
 @extends('Master.Master')
 
 @section('main')
+    @include('Harvel.admin_nav_bar')
     <div class="container">
         <h1 class="display-4">Are you sure you want to delete?</h1>
         @include('Harvel.Category.categoryDetails')

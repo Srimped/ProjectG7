@@ -60,8 +60,9 @@
         </div>
 
         <div class="container">
-            <a type="button" class="btn btn-danger" href="http://127.0.0.1:8000" >Cancel</a>
+            <a type="button" class="btn btn-danger" href="{{route('harvel.home')}}" >Cancel</a>
             <span class="password"><a href="#">Forgot password?</a></span>
+            <a style="margin: 20px" type="button" class="btn btn-warning" href="{{route('auth.register')}}">Register</a>
         </div>
     </form>
         </div>

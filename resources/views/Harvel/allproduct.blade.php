@@ -36,6 +36,8 @@
             </a>
         </div>
     </section>
+    @include('Harvel.category')
+    <br><br><br><br><br>
     <h1>---All Products---</h1>
     <section class="shop">
     @foreach($product as $p)

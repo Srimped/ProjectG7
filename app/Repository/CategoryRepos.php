@@ -14,6 +14,14 @@ class CategoryRepos
         return DB::select ($sqlc);
     }
 
+    public static function getAllCateName() {
+        $sqlc = 'select c.Cate_Name ';
+        $sqlc .= 'from category as c ';
+        $sqlc .= 'order by c.Cate_Id';
+
+        return DB::select ($sqlc);
+    }
+
     public static function getCateById($Cate_Id){
         $sqlc = 'select c.* ';
         $sqlc .= 'from category as c ';

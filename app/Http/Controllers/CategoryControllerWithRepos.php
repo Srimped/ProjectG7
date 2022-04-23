@@ -28,15 +28,6 @@ class CategoryControllerWithRepos extends Controller
             ]);
     }
 
-    public function navindex()
-    {
-        $categories = CategoryRepos::getAllCate();
-        return view('Harvel.nav_bar',
-            [
-                'categories' => $categories,
-            ]);
-    }
-
     public function show($Cate_Id)
     {
         $category = CategoryRepos::getCateById($Cate_Id);
