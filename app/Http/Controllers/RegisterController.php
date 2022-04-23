@@ -44,7 +44,7 @@ class RegisterController extends Controller
                 'Cus_Name'=>['required','min:3'],
                 'location'=>['required','min:5'],
                 'Cus_Email' =>['required','Email'],
-                'Cus_Phonenumber' =>['required','min:10', 'max:10'],
+                'Cus_Phonenumber' =>['required','digits:10','starts_with:0'],
             ]);
     }
 }

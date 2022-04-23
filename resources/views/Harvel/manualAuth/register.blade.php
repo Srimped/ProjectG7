@@ -51,16 +51,16 @@
                 @csrf
                 <div class="container">
                     <label for="Cus_Name"><b>Name</b></label>
-                    <input type="text" placeholder="Enter name" name="Cus_Name">
+                    <input type="text" placeholder="Enter name" name="Cus_Name" value="{{old('Cus_Name')?? $customer->Cus_Name}}">
 
                     <label for="Cus_Email"><b>Email</b></label>
-                    <input type="Email" placeholder="Enter Email" name="Cus_Email">
+                    <input type="Email" placeholder="Enter Email" name="Cus_Email" value="{{old('Cus_Email')?? $customer->Cus_Email}}">
 
                     <label for="Cus_Phonenumber"><b>Phone Number</b></label>
-                    <input type="phone" placeholder="Enter Phone" name="Cus_Phonenumber">
+                    <input type="phone" placeholder="Enter Phone" name="Cus_Phonenumber" value="{{old('Cus_Phonenumber')?? $customer->Cus_Phonenumber}}">
 
                     <label for="location"><b>Location</b></label>
-                    <input type="location" placeholder="Enter Location" name="location">
+                    <input type="location" placeholder="Enter Location" name="location" value="{{old('location')?? $customer->location}}">
 
                     <button type="submit" class="btn btn-success">Register</button>
                 </div>
