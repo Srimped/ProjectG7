@@ -53,5 +53,8 @@
     </div>
         </a>
     @endforeach
+        <section>
+            @include('Harvel.footer')
+        </section>
     </section>
 @endsection

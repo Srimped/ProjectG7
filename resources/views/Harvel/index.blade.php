@@ -38,45 +38,64 @@
         </div>
     </section>
     @include('Harvel.category')
+    <br><br><br><br><br><br>
+    <h1 style="background: #4CAF50">---Best Seller---</h1>
+    <p style="background: #86ff3b; text-align: center">--The Most Product Selled--</p>
     <section class="shop">
-        <br>
-        <br>
-        <h1 class="best_title">---- Best Seller ----</h1>
-        <p class="best_des">- Best Items In This Month -</p>
-        <div class="shop-row">
-            <div class="shop-col">
-                <img src="/image/product_1.jpg">
-                <div class="layer">
-                    <h3>Iphone 13</h3>
-                    <p>the newest smart phone in apple</p>
-                    <button class="action-btn" type="submit" name="Detail">Show Detail</button>
-
-                </div>
-            </div>
-        </div>
+    @foreach($product as $p)
+        @if($p->price >= 30000000)
+        <a style="cursor: pointer" type="submit" href="{{route('allproduct.show', ['Prod_Id' => $p->Prod_Id])}}">
             <div class="shop-row">
                 <div class="shop-col">
-                    <img src="/image/product_1.jpg">
+                    <img src="/image/{{$p->Prod_Image}}" width="10%" alt="">
                     <div class="layer">
-                        <h3>Iphone 13</h3>
-                        <p>the newest smart phone in apple</p>
-                        <button class="action-btn" type="submit" name="Detail">Show Detail</button>
+                        <h4>{{$p->Prod_Name}}</h4>
+                        <h5>{{$p->price}} VNĐ</h5>
                     </div>
                 </div>
             </div>
-            <div class="shop-row">
-                <div class="shop-col">
-                    <img src="/image/product_1.jpg">
-                    <div class="layer">
-                        <h3>Iphone 13</h3>
-                        <p>the newest smart phone in apple</p>
-                        <button class="action-btn" type="submit" name="Detail">Show Detail</button>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <section>
-        @include('Harvel.footer')
-    </section>
+        </a>
+            @endif
+    @endforeach
+    <br><br><br><br>
+        <h1 style="background: #4CAF50">---Highest Price---</h1>
+        <p style="background: #86ff3b; text-align: center">--The Most Expensive Product--</p>
+        <section class="shop">
+            @foreach($product as $p)
+                @if($p->price > 50000000)
+                    <a style="cursor: pointer" type="submit" href="{{route('allproduct.show', ['Prod_Id' => $p->Prod_Id])}}">
+                        <div class="shop-row">
+                            <div class="shop-col">
+                                <img src="/image/{{$p->Prod_Image}}" width="10%" alt="">
+                                <div class="layer">
+                                    <h4>{{$p->Prod_Name}}</h4>
+                                    <h5>{{$p->price}} VNĐ</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                @endif
+            @endforeach
+                <br><br><br><br>
+                <h1 style="background: #4CAF50">---Lowest Price---</h1>
+                <p style="background: #86ff3b; text-align: center">--The Cheapest Product</p>
+                <section class="shop">
+                    @foreach($product as $p)
+                        @if($p->price <= 5000000)
+                            <a style="cursor: pointer" type="submit" href="{{route('allproduct.show', ['Prod_Id' => $p->Prod_Id])}}">
+                                <div class="shop-row">
+                                    <div class="shop-col">
+                                        <img src="/image/{{$p->Prod_Image}}" width="10%" alt="">
+                                        <div class="layer">
+                                            <h4>{{$p->Prod_Name}}</h4>
+                                            <h5>{{$p->price}} VNĐ</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        @endif
+                    @endforeach
+            <section>
+                @include('Harvel.footer')
+            </section>
 @endsection()
