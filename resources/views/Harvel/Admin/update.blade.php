@@ -7,6 +7,10 @@
 
         @include('Harvel.partials.errors')
 
+        @isset($pwdError)
+            Password is incorrect!!!!!
+        @endisset
+
         <form action="{{route('admin.update', ['Ad_Id' => old('Ad_Id')?? $admin->Ad_Id])}}" method="post">
             @csrf
             @include('Harvel.Admin.adminFields')

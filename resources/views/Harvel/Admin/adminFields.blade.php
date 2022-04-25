@@ -11,12 +11,6 @@
 </div>
 
 <div class="form-group">
-    <label for="password" class="font-weight-bold">Password</label>
-    <input type="text" class="form-control" id="password" name="password" min="0"
-           value="">
-</div>
-
-<div class="form-group">
     <label for="Ad_Email" class="font-weight-bold">Email</label>
     <input type="email" class="form-control" id="Ad_Email" name="Ad_Email" min="0"
            value="{{old('Ad_Email')?? $admin->Ad_Email}}">
@@ -28,3 +22,8 @@
            value="{{old('Ad_Phonenumber')?? $admin->Ad_Phonenumber}}">
 </div>
 
+<div class="form-group">
+    <label for="password" class="font-weight-bold">Password</label>
+    <input type="password" class="form-control" id="password" name="password" min="0"
+           value="">
+</div>

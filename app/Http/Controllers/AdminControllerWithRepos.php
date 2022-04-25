@@ -56,7 +56,11 @@ class AdminControllerWithRepos extends Controller
         else
         {
             $admin = AdminRepos::getAdminById($Ad_Id);
-            return view('Harvel.Admin.update',["admin" => $admin[0]]);
+
+            return view('Harvel.Admin.update',[
+                "admin" => $admin[0],
+                'pwdError' => true
+            ]);
         }
 
         AdminRepos::update($admin);

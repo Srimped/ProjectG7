@@ -29,7 +29,6 @@ class CustomerControllerWithRepos extends Controller
 
     public function show($Cus_Id)
     {
-
         $customer = CustomerRepos::getCusById($Cus_Id);
         return view('Harvel.Customer.show',
             [

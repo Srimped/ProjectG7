@@ -62,7 +62,7 @@ class ManualAuthController extends Controller
                                 if($value != $account[$i]->password) {$n++;break;}
                             }
                         }
-                        if($n!=0) $fail('Password is incorrect');
+                        if($n!=0) $fail('Username or password are incorrect');
                     }],
             ]);
     }
