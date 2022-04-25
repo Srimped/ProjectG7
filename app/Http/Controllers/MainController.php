@@ -23,4 +23,8 @@ class MainController extends Controller
     public function about(){
         return view('Harvel.about');
     }
+
+    public function contact(){
+        return view('Harvel.contact');
+    }
 }

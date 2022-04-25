@@ -38,7 +38,7 @@
     </section>
     @include('Harvel.category')
     <br><br><br><br><br>
-    <h1>---All Products---</h1>
+    <h1 style="background: #4CAF50; border-radius: 40px">---All Products---</h1>
     <section class="shop">
     @foreach($product as $p)
         <a style="cursor: pointer" type="submit" href="{{route('allproduct.show', ['Prod_Id' => $p->Prod_Id])}}">

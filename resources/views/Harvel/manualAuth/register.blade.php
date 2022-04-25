@@ -1,6 +1,7 @@
 @extends('Master.Master')
 
 @section('main')
+    @include('Harvel.nav_bar')
     <style>
         .loginheader{
             transform: translateX(5%);
@@ -9,7 +10,7 @@
             margin-bottom: 40px;
         }
 
-        form{
+        .login-form{
             width: 500px;
             border: 2px solid #ccc;
             padding: 30px;
@@ -44,7 +45,7 @@
     <br><br>
     <section class="loginheader">
         <div class="text-box">
-            <form action="{{route('auth.registered')}}" method="post">
+            <form class="login-form" action="{{route('auth.registered')}}" method="post">
                 @include('Harvel.partials.errors')
                 <br><br><br><br><br>
                 <h2>Registration Form</h2>
@@ -66,7 +67,7 @@
                 </div>
 
                 <div class="container">
-                    <a type="button" class="btn btn-danger" href="{{route('harvel.home')}}" >Cancel</a>
+                    <a type="button" class="btn btn-danger" href="{{route('auth.ask')}}" >Cancel</a>
                 </div>
             </form>
         </div>

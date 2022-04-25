@@ -1,6 +1,7 @@
 @extends('Master.Master')
 
 @section('main')
+    @include('Harvel.nav_bar')
     <div class="create-form">
         <h3 style="text-align: center;">Create New Product</h3>
         @include('Harvel.partials.Errors')
