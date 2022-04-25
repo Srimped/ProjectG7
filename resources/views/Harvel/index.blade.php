@@ -39,8 +39,8 @@
     </section>
     @include('Harvel.category')
     <br><br><br><br><br><br>
-    <h1 style="background: #4CAF50">---Best Seller---</h1>
-    <p style="background: #86ff3b; text-align: center">--The Most Product Selled--</p>
+    <h1 style="background: #4CAF50; border-radius: 40px">---Best Seller---</h1>
+    <p style="background: #86ff3b; text-align: center; border-radius: 40px">--The Most Product Selled--</p>
     <section class="shop">
     @foreach($product as $p)
         @if($p->price >= 30000000)
@@ -58,8 +58,8 @@
             @endif
     @endforeach
     <br><br><br><br>
-        <h1 style="background: #4CAF50">---Highest Price---</h1>
-        <p style="background: #86ff3b; text-align: center">--The Most Expensive Product--</p>
+        <h1 style="background: #4CAF50; border-radius: 40px">---Highest Price---</h1>
+        <p style="background: #86ff3b; text-align: center; border-radius: 40px">--The Most Expensive Product--</p>
         <section class="shop">
             @foreach($product as $p)
                 @if($p->price > 50000000)
@@ -77,8 +77,8 @@
                 @endif
             @endforeach
                 <br><br><br><br>
-                <h1 style="background: #4CAF50">---Lowest Price---</h1>
-                <p style="background: #86ff3b; text-align: center">--The Cheapest Product</p>
+                <h1 style="background: #4CAF50; border-radius: 40px">---Lowest Price---</h1>
+                <p style="background: #86ff3b; text-align: center; border-radius: 40px">--The Cheapest Product</p>
                 <section class="shop">
                     @foreach($product as $p)
                         @if($p->price <= 5000000)

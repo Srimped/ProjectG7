@@ -22,6 +22,11 @@ use Illuminate\Support\Facades\Route;
         'as' => 'harvel.about'
     ]);
 
+    Route::get('contact',[
+        'uses' => 'MainController@contact',
+        'as' => 'harvel.contact'
+    ]);
+
 
 Route::group(['prefix' => 'allproduct'], function () {
     Route::get('', [
