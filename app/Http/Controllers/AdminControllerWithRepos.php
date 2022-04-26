@@ -66,7 +66,7 @@ class AdminControllerWithRepos extends Controller
 
         AdminRepos::update($admin);
 
-        return redirect()->action('AdminControllerWithRepos@index')
+        return redirect()->action('ManualAuthController@ask')
             ->with('msg', 'Update Successfully');
     }
 
@@ -75,10 +75,10 @@ class AdminControllerWithRepos extends Controller
         return Validator::make(
             $request->all(),
             [
-                'username' => ['required','min:3','size:50'],
-                'password' => ['required','alpha_num','min:7','size:50'],
-                'Ad_Name'  => ['required','size:50'],
-                'Ad_Email' => ['required', 'email','size:50'],
+                'username' => ['required','min:3','max:50'],
+                'password' => ['required','alpha_num','min:7','max:50'],
+                'Ad_Name'  => ['required','max:50'],
+                'Ad_Email' => ['required', 'email','max:50'],
                 'Ad_Phonenumber' => ['required', 'starts_with:0', 'digits:10'],
             ]
         );

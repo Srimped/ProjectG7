@@ -142,7 +142,7 @@ class ProductControllerWithRepos extends Controller
         return Validator::make(
             $request->all(),
             [
-                'Prod_Name' => ['required','size:100'],
+                'Prod_Name' => ['required','max:100'],
                 'category' => ['gt:0',],
                 'price' => ['required','numeric','gte:1000'],
                 'description' => ['required']
