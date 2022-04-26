@@ -15,5 +15,9 @@
         <br>
         <h5 class="col-sm-3">Description</h5>
         <div class="col-sm-9">{{ $product->description }}</div>
+        <br><br>
+        <div class="col-sm-9">
+            <a class="btn btn-warning" href="{{route('allproduct.download')}}">Download</a>
+        </div>
     </div>
 </div>

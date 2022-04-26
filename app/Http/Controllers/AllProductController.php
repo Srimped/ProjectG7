@@ -52,4 +52,10 @@ class AllProductController extends Controller
                 'category'=>$category,
             ]);
     }
+
+    public function download(){
+        $download = public_path('Product Details.doc');
+        return response()->download($download);
+        return view('Harvel.allproduct');
+    }
 }
