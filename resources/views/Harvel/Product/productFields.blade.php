@@ -25,7 +25,7 @@
     </div>
     <div class="form-group">
         <label for="price" class="font-weight-bold">Price(VND)</label>
-        <input type="text" class="form-control" id="price" name="price" value="{{old('price')?? $product->price}}">
+        <input type="number" class="form-control" id="price" name="price" value="{{old('price')?? $product->price}}">
     </div>
     <div class="form-group">
         <label for="description" class="font-weight-bold">Description</label>

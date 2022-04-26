@@ -1,5 +1,5 @@
     <nav>
-        <a href="http://127.0.0.1:8000/"><img src="/image/logo.png" style="width: 60%"></a>
+        <a href="{{route('harvel.home')}}"><img src="/image/logo.png" style="width: 60%"></a>
     <div class="nav-link" id="navlink">
         <ul>
             <li><a href="{{route('product.index')}}">Product</a></li>
