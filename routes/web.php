@@ -38,6 +38,12 @@ Route::group(['prefix' => 'allproduct'], function () {
         'uses' => 'AllProductController@show',
         'as' => 'allproduct.show'
     ]);
+
+    Route::get('show',[
+       'uses' =>  'AllProductController@download',
+        'as' => 'allproduct.download'
+    ]);
+
     Route::get('category/{Cate_Id}',[
         'uses' => "AllProductController@category",
         'as' => 'allproduct.category'
