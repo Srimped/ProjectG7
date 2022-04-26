@@ -124,7 +124,7 @@ class CategoryControllerWithRepos extends Controller
         return Validator::make(
             $request->all(),
             [
-                'Cate_Name' => ['required'],
+                'Cate_Name' => ['required','size:20'],
             ],
             [
                 'Cate_Name' => 'Please enter name'

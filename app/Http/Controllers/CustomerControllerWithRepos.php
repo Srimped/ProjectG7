@@ -94,9 +94,9 @@ class CustomerControllerWithRepos extends Controller
         return Validator::make(
             $request->all(),
             [
-                'location' => ['required',],
-                'Cus_Name' => ['required'],
-                'Cus_Email' => ['required', 'email'],
+                'location' => ['required','size:100'],
+                'Cus_Name' => ['required','size:50'],
+                'Cus_Email' => ['required', 'email','size:50'],
                 'Cus_Phonenumber' => ['required', 'starts_with:0', 'digits:10'],
             ]
         );

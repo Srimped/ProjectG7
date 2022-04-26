@@ -75,10 +75,10 @@ class AdminControllerWithRepos extends Controller
         return Validator::make(
             $request->all(),
             [
-                'username' => ['required','min:3'],
-                'password' => ['required','alpha_num','min:7'],
-                'Ad_Name'  => ['required'],
-                'Ad_Email' => ['required', 'email'],
+                'username' => ['required','min:3','size:50'],
+                'password' => ['required','alpha_num','min:7','size:50'],
+                'Ad_Name'  => ['required','size:50'],
+                'Ad_Email' => ['required', 'email','size:50'],
                 'Ad_Phonenumber' => ['required', 'starts_with:0', 'digits:10'],
             ]
         );
