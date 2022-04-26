@@ -24,8 +24,9 @@ class AdminControllerWithRepos extends Controller
     public function edit($Ad_Id)
     {
         $admin = AdminRepos::getAdminById($Ad_Id);
-        $bool=\Illuminate\Support\Facades\Session::get('username')===AdminRepos::getAdminById($Ad_Id)[0]->username;
-                if($bool==false) return redirect()->action('AdminControllerWithRepos@index')->with('msg', 'U can only edit your own information!!!!!');
+        $bool=session('username')===AdminRepos::getAdminById($Ad_Id)[0]->username;
+                if($bool==false) return redirect()->action('AdminControllerWithRepos@index')
+                ->with('msg', 'U can only edit your own information!!!!!');
         return view(
             'Harvel.Admin.update',
             ["admin" => $admin[0]]);

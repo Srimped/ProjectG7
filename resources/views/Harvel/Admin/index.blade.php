@@ -28,10 +28,13 @@
                     <td><a type="button" class="btn btn-primary btn-sm"
                            href="{{route('admin.show', ['Ad_Id' => $a->Ad_Id])}}"
                         >Details</a>
-                    <td><a type="button" class="btn btn-success btn-sm"
-                           href="{{route('admin.edit', ['Ad_Id' => $a->Ad_Id])}}"
-                        >Edit</a>
-                    </td>
+
+                    @if(session('username') === $a->username)
+                        <td><a type="button" class="btn btn-success btn-sm"
+                               href="{{route('admin.edit', ['Ad_Id' => $a->Ad_Id])}}"
+                            >Edit</a>
+                        </td>
+                    @endif
                 </tr>
             @endforeach
             </tbody>
