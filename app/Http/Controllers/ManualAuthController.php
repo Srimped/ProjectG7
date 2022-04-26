@@ -31,8 +31,10 @@ class ManualAuthController extends Controller
                 Session::put('username', $request->input('username'));
                 return redirect()->route('admin.index');
             }
-        else return redirect()->route('auth.ask');
-
+        else
+        {
+            return redirect()->action('ManualAuthController@ask')->with('msg','Wrong username or password');
+        }
         return redirect()->route('admin.index');
     }
 

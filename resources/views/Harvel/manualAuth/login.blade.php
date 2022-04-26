@@ -46,6 +46,7 @@
         <div class="text-box">
     <form class="login-form" action="{{route('auth.signin')}}" method="post">
         @include('Harvel.partials.errors')
+        @include('Harvel.manualAuth.sessionmessage')
         <br><br><br><br><br>
         <h2>Login Form</h2>
         @csrf
