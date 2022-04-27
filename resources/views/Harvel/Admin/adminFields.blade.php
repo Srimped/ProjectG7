@@ -18,7 +18,7 @@
 
 <div class="form-group">
     <label for="Ad_Phonenumber" class="font-weight-bold">Phone number</label>
-    <input type="text" class="form-control" id="Ad_Phonenumber" name="Ad_Phonenumber" min="0"
+    <input type="number" class="form-control" id="Ad_Phonenumber" name="Ad_Phonenumber" min="0"
            value="{{old('Ad_Phonenumber')?? $admin->Ad_Phonenumber}}">
 </div>
 
