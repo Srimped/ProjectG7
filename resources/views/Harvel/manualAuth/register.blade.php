@@ -58,7 +58,7 @@
                     <input type="Email" placeholder="Enter Email" name="Cus_Email" value="{{old('Cus_Email')?? $customer->Cus_Email}}">
 
                     <label for="Cus_Phonenumber"><b>Phone Number</b></label>
-                    <input type="phone" placeholder="Enter Phone" name="Cus_Phonenumber" value="{{old('Cus_Phonenumber')?? $customer->Cus_Phonenumber}}">
+                    <input type="number" placeholder="Enter Phone" name="Cus_Phonenumber" value="{{old('Cus_Phonenumber')?? $customer->Cus_Phonenumber}}">
 
                     <label for="location"><b>Location</b></label>
                     <input type="location" placeholder="Enter Location" name="location" value="{{old('location')?? $customer->location}}">

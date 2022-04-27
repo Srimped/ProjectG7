@@ -41,10 +41,10 @@ class RegisterController extends Controller
         return Validator::make(
             $request->all(),
             [
-                'Cus_Name'=>['required','min:3'],
-                'location'=>['required','min:5'],
-                'Cus_Email' =>['required','Email'],
-                'Cus_Phonenumber' =>['required','digits:10','starts_with:0'],
+                'location' => ['required','max:100'],
+                'Cus_Name' => ['required','max:50'],
+                'Cus_Email' => ['required', 'email','max:50'],
+                'Cus_Phonenumber' => ['required', 'starts_with:0', 'digits:10'],
             ]);
     }
 }
